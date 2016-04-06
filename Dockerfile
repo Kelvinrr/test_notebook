@@ -1,7 +1,6 @@
 FROM andrewosh/binder-base
 
 RUN git clone https://github.com/Kelvinrr/autocnet.git
-RUN cd autocnet
 
 #RUN wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
 #RUN bash miniconda.sh -b -p $HOME/miniconda
