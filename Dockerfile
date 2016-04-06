@@ -13,6 +13,9 @@ RUN cd autocnet
 #RUN conda update -q conda
 
 # RUN conda install nose numpy pillow scipy pandas networkx scikit-image sqlalchemy numexpr dill cython
+RUN chown 777 /home/main/.cache/pip
+RUN chown 777 /home/main/.cache/pip/http
+
 RUN pip install pvl coverage pysal
 RUN pip install protobuf==3.0.0b2
 RUN conda install opencv
