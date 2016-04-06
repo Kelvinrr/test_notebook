@@ -14,7 +14,8 @@ USER root
 
 # RUN conda install nose numpy pillow scipy pandas networkx scikit-image sqlalchemy numexpr dill cython
 RUN pip install pvl coverage pysal
-RUN conda install -c https://conda.anaconda.org/jlaura opencv3=3.0.0
+RUN pip install protobuf==3.0.0b2
+RUN conda install opencv3
 RUN conda install h5py gdal
 RUN conda install -c osgeo proj4 dill
 RUN conda upgrade numpy
