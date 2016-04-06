@@ -1,7 +1,5 @@
 FROM andrewosh/binder-base
 
-USER root
-
 RUN git clone https://github.com/Kelvinrr/autocnet.git
 RUN cd autocnet
 
