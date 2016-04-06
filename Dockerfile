@@ -13,7 +13,7 @@ RUN conda config --set always_yes yes --set changeps1 no
 RUN conda update -q conda
 
 RUN conda create -y -q -n py-env python=3.5 nose numpy pillow scipy pandas networkx scikit-image sqlalchemy numexpr dill cython
-RUN source activate py-env
+RUN /bin/bash -c "source activate py-env"
 
 RUN conda install -c https://conda.anaconda.org/jlaura opencv3=3.0.0
 RUN conda install -c https://conda.anaconda.org/jlaura h5py gdal
