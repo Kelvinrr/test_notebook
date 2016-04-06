@@ -1,6 +1,6 @@
 FROM andrewosh/binder-base
 
-USER Root
+USER root
 
 RUN git clone https://github.com/Kelvinrr/autocnet.git
 RUN cd autocnet
