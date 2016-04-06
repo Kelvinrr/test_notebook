@@ -16,7 +16,7 @@ RUN conda install h5py gdal
 RUN conda install -c osgeo proj4 dill
 RUN conda upgrade numpy
 
-RUN RUN git clone https://github.com/Kelvinrr/autocnet.git && cd autocnet && pip install -r requirements.txt
+RUN git clone https://github.com/Kelvinrr/autocnet.git && cd autocnet && pip install -r requirements.txt
 RUN pip install coverage
 RUN pip install coveralls
 
