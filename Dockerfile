@@ -2,8 +2,8 @@ FROM andrewosh/binder-base
 
 USER root
 
-# RUN git clone https://github.com/Kelvinrr/autocnet.git
-# RUN cd autocnet
+RUN git clone https://github.com/Kelvinrr/autocnet.git
+RUN cd autocnet
 
 #RUN wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
 #RUN bash miniconda.sh -b -p $HOME/miniconda
@@ -20,7 +20,7 @@ RUN conda install h5py gdal
 RUN conda install -c osgeo proj4 dill
 RUN conda upgrade numpy
 
-RUN sudo pip install -r requirements.txt
+RUN pip install -r requirements.txt
 RUN pip install coverage
 RUN pip install coveralls
 
