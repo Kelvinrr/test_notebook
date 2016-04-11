@@ -21,12 +21,13 @@ RUN conda create -y -q -n notebook-env python=3.5 nose numpy pillow scipy pandas
 RUN source activate notebook-env
 
 RUN echo 'export PATH=$PATH:/usr/local/bin/python3' >> ~/.bashrc
+RUN ls $HOME/miniconda/bin
 
 # Install the non-conda packages if required, requirements.txt duplicates are ignored
+RUN conda install -c https://conda.anaconda.org/jlaura opencv3=3.0.0
 RUN conda install -c https://conda.anaconda.org/jlaura h5py gdal
 RUN conda install -c osgeo proj4
 RUN conda upgrade numpy
-RUN conda install -c https://conda.anaconda.org/jlaura opencv3=3.0.0
 RUN pip install -r requirements.txt
 RUN pip install coverage
 RUN pip install coveralls
