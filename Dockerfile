@@ -34,6 +34,7 @@ RUN conda install -c osgeo proj4
 RUN conda upgrade numpy
 
 RUN git clone https://github.com/Kelvinrr/autocnet.git $HOME/autocnet && cd $HOME/autocnet && pip install -r requirements.txt
+RUN echo "export PYHTONPATH=$PYHTONPATH:$HOME/autocnet" >> ~/.bashrc
 
 
 
