@@ -10,7 +10,7 @@ RUN bash miniconda.sh -b -p $HOME/miniconda
 RUN export PATH="$HOME/miniconda/bin:$PATH"
 RUN echo "export PATH=$PATH:$HOME/miniconda/bin/python3.5" >> ~/.bashrc
 
-Run hash -r
+RUN hash -r
 RUN conda config --set always_yes yes --set changeps1 no
 RUN conda update -q conda
 
