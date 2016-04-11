@@ -6,8 +6,10 @@ RUN wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -
 
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
-Run bash miniconda.sh -b -p $HOME/miniconda
-Run export PATH="$HOME/miniconda/bin:$PATH"
+RUN bash miniconda.sh -b -p $HOME/miniconda
+RUN export PATH="$HOME/miniconda/bin:$PATH"
+RUN echo "export PATH=$PATH:$HOME/miniconda/bin/python3.5" >> ~/.bashrc
+
 Run hash -r
 RUN conda config --set always_yes yes --set changeps1 no
 RUN conda update -q conda
@@ -20,7 +22,6 @@ RUN conda create -y -q -n notebook-env python=3.5 nose numpy pillow scipy pandas
 # Activate the env
 RUN source activate notebook-env
 
-RUN echo "export PATH=$PATH:$HOME/miniconda/bin/python3.5" >> ~/.bashrc
 RUN ls $HOME/miniconda/bin
 
 # Install the non-conda packages if required, requirements.txt duplicates are ignored
