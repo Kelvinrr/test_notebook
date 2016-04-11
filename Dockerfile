@@ -4,7 +4,7 @@ USER root
 
 RUN wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
 
-# RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 RUN bash miniconda.sh -b -p $HOME/miniconda
 RUN export PATH="$HOME/miniconda/bin:$PATH"
