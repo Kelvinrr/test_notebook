@@ -4,7 +4,7 @@ USER root
 
 RUN wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
 
-RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+# RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 RUN bash miniconda.sh -b -p $HOME/miniconda
 RUN export PATH="$HOME/miniconda/bin:$PATH"
@@ -21,8 +21,6 @@ RUN conda info -a
 RUN conda create -y -q -n notebook-env python=3.5 nose numpy pillow scipy pandas networkx scikit-image sqlalchemy numexpr dill cython
 # Activate the env
 RUN source activate notebook-env
-
-RUN ls $HOME/miniconda/bin
 
 # Install the non-conda packages if required, requirements.txt duplicates are ignored
 RUN conda install -c https://conda.anaconda.org/jlaura opencv3=3.0.0
