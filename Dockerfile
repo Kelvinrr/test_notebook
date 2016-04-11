@@ -22,7 +22,6 @@ RUN source activate notebook-env
 RUN echo 'export PATH=$PATH:/usr/local/bin/python3' >> ~/.bashrc
 
 # Install the non-conda packages if required, requirements.txt duplicates are ignored
-RUN conda update --all
 RUN conda install -c https://conda.anaconda.org/jlaura opencv3=3.0.0
 RUN conda install -c https://conda.anaconda.org/jlaura h5py gdal
 RUN conda install -c osgeo proj4
