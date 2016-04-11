@@ -33,9 +33,7 @@ RUN conda install -c https://conda.anaconda.org/jlaura h5py gdal
 RUN conda install -c osgeo proj4
 RUN conda upgrade numpy
 
-RUN pip install -r $HOME/notebooks/requirements.txt
-
 RUN git clone https://github.com/Kelvinrr/autocnet.git $HOME/autocnet && cd $HOME/autocnet
 
-
+RUN pip install -r $HOME/autocnet/requirements_dev.txt
 
