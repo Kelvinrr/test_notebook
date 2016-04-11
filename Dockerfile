@@ -11,6 +11,11 @@ Run export PATH="$HOME/miniconda/bin:$PATH"
 Run hash -r
 RUN conda config --set always_yes yes --set changeps1 no
 RUN conda update -q conda
+
+RUN add-apt-repository ppa:fkrull/deadsnakes
+RUN apt-get update
+RUN apt-get install python3.5
+
 # Useful for debugging any issues with conda
 RUN conda info -a
 
