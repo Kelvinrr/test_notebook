@@ -2,7 +2,7 @@ FROM andrewosh/binder-base
 
 USER root
 
-RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+RUN /bin/bash -c "rm /bin/sh && ln -s /bin/bash /bin/sh"
 
 Run bash miniconda.sh -b -p $HOME/miniconda
 Run export PATH="$HOME/miniconda/bin:$PATH"
