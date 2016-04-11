@@ -19,6 +19,7 @@ RUN conda create -y -q -n notebook-env python=3.5 nose numpy pillow scipy pandas
 # Activate the env
 RUN source activate notebook-env
 
+RUN echo 'export PATH=$PATH:/usr/local/bin/python3' >> ~/.bashrc
 RUN setenv PATH "$PATH:/usr/local/bin/python3"
 
 # Install the non-conda packages if required, requirements.txt duplicates are ignored
