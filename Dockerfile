@@ -25,7 +25,8 @@ RUN source activate notebook-env
 RUN git clone https://github.com/Kelvinrr/autocnet.git $HOME/autocnet && cd autocnet && pip install -r requirements.txt
 
 # Install the non-conda packages if required, requirements.txt duplicates are ignored
-RUN conda install opencv # -c https://conda.anaconda.org/jlaura opencv3=3.0.0
+# RUN conda install -c https://conda.anaconda.org/jlaura opencv3=3.0.0
+RUN conda install opencv 
 RUN conda install -c https://conda.anaconda.org/jlaura h5py gdal
 RUN conda install -c osgeo proj4
 RUN conda upgrade numpy
