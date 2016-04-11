@@ -3,8 +3,12 @@ FROM andrewosh/binder-base
 USER root
 
 RUN wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
-
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+# make sure the package repository is up to date
+RUN apt-get update
+# install python3 and pip for python3
+RUN apt-get install -y python3-pip  
+
 
 RUN bash miniconda.sh -b -p $HOME/miniconda
 RUN export PATH="$HOME/miniconda/bin:$PATH"
@@ -22,17 +26,14 @@ RUN conda create -y -q -n notebook-env python=3.5 nose numpy pillow scipy pandas
 # Activate the env
 RUN source activate notebook-env
 
-RUN git clone https://github.com/Kelvinrr/autocnet.git $HOME/autocnet && cd autocnet && pip install -r requirements.txt
-
 # Install the non-conda packages if required, requirements.txt duplicates are ignored
 # RUN conda install -c https://conda.anaconda.org/jlaura opencv3=3.0.0
 RUN conda install opencv 
 RUN conda install -c https://conda.anaconda.org/jlaura h5py gdal
 RUN conda install -c osgeo proj4
 RUN conda upgrade numpy
-RUN pip install -r requirements.txt
-RUN pip install coverage
-RUN pip install coveralls
+
+RUN git clone https://github.com/Kelvinrr/autocnet.git $HOME/autocnet && cd $HOME/autocnet && pip install -r requirements.txt
 
 
 
