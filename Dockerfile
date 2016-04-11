@@ -22,6 +22,8 @@ RUN conda create -y -q -n notebook-env python=3.5 nose numpy pillow scipy pandas
 # Activate the env
 RUN source activate notebook-env
 
+RUN git clone https://github.com/Kelvinrr/autocnet.git $HOME/ && cd autocnet && pip install -r requirements.txt
+
 # Install the non-conda packages if required, requirements.txt duplicates are ignored
 RUN conda install opencv # -c https://conda.anaconda.org/jlaura opencv3=3.0.0
 RUN conda install -c https://conda.anaconda.org/jlaura h5py gdal
