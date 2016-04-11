@@ -17,7 +17,7 @@ RUN conda info -a
 # Create a virtual env and install dependencies
 RUN conda create -y -q -n notebook-env python=3.5 nose numpy pillow scipy pandas networkx scikit-image sqlalchemy numexpr dill cython
 # Activate the env
-RUN /bin/bash -c "source activate notebook-env"
+RUN source activate notebook-env
 
 # Install the non-conda packages if required, requirements.txt duplicates are ignored
 RUN conda install -c https://conda.anaconda.org/jlaura opencv3=3.0.0
