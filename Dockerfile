@@ -25,7 +25,10 @@ RUN conda info -a
 # Create a virtual env and install dependencies
 # RUN conda create -y -q -n notebook-env python=3.5 nose numpy pillow scipy pandas networkx scikit-image sqlalchemy numexpr dill cython
 
-RUN conda env create -f $HOME/autocnet/environment.yml
+RUN ls $HOME
+RUN ls $HOME/notebooks
+
+RUN conda env create -y -q -n autocnet -f $HOME/autocnet/environment.yml
 
 # Activate the env
 RUN source activate autocnet
@@ -37,6 +40,6 @@ RUN conda install -c https://conda.anaconda.org/jlaura h5py gdal
 RUN conda install -c osgeo proj4
 RUN conda upgrade numpy
 
-RUN pip install -r $HOME/autocnet/requirements_dev.txt
+RUN pip install -r $HOME/autocnet/requirements.txt
 RUN conda install 
 
