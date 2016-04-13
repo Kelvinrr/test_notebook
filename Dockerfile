@@ -34,8 +34,6 @@ RUN source activate autocnet
 
 # Install the non-conda packages if required, requirements.txt duplicates are ignored
 RUN conda install -c https://conda.anaconda.org/jlaura opencv3=3.0.0
-RUN conda install -c https://conda.anaconda.org/jlaura h5py gdal
-RUN conda install -c osgeo proj4
 RUN conda upgrade numpy
 
 RUN pip install -r $HOME/autocnet/requirements.txt
