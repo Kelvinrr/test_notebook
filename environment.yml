@@ -85,7 +85,8 @@ dependencies:
 - numba=0.23.1=np110py35_0
 - numexpr=2.4.6=np110py35_1
 - numpy=1.10.4=py35_0
-- opencv
+- odo=0.4.0=py35_0
+- opencv3=3.0.0=py35_0
 - openpyxl=2.3.2=py35_0
 - openssl=1.0.2f=0
 - pandas=0.17.1=np110py35_0
@@ -175,4 +176,3 @@ dependencies:
   - rope-py3k==0.9.4.post1
   - sphinx-rtd-theme==0.1.9
   - tables==3.2.2
-
