@@ -23,7 +23,7 @@ RUN conda update -q conda
 RUN conda info -a
 
 RUN wget https://raw.githubusercontent.com/Kelvinrr/test_notebook/master/environment.yml -O $HOME/environment.yml
-RUN conda create -y -q -n autocnet -f $HOME/environment.yml
+RUN conda env create -f $HOME/environment.yml
 RUN rm $HOME/environment.yml
 
 # Activate the env
