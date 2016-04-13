@@ -22,9 +22,6 @@ RUN conda update -q conda
 # Useful for debugging any issues with conda
 RUN conda info -a
 
-# Create a virtual env and install dependencies
-RUN conda install nose numpy pillow scipy pandas networkx scikit-image sqlalchemy numexpr dill cython
-
 RUN wget https://raw.githubusercontent.com/Kelvinrr/test_notebook/master/environment.yml
 RUN conda env create -y -q -n autocnet -f environment.yml
 RUN rm environment.yml
