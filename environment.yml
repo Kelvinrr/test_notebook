@@ -86,7 +86,6 @@ dependencies:
 - numexpr=2.4.6=np110py35_1
 - numpy=1.10.4=py35_0
 - odo=0.4.0=py35_0
-- opencv3=3.0.0=py35_0
 - openpyxl=2.3.2=py35_0
 - openssl=1.0.2f=0
 - pandas=0.17.1=np110py35_0
@@ -143,7 +142,7 @@ dependencies:
 - sqlalchemy=1.0.11=py35_0
 - sqlite=3.9.2=0
 - statsmodels=0.6.1=np110py35_0
-- sympy=0.7.6.1=py35_0
+- sympy=0.7.6.1=py35_0o
 - terminado=0.5=py35_1
 - tk=8.5.18=0
 - toolz=0.7.4=py35_0
