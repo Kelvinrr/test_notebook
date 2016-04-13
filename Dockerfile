@@ -16,7 +16,7 @@ RUN git clone https://github.com/Kelvinrr/autocnet.git $HOME/autocnet
 # RUN echo "export PATH=$PATH:$HOME/miniconda/bin/python3.5" >> ~/.bashrc
 
 # RUN hash -r
-RUN conda config --set always_yes yes --set changeps1 no
+# RUN conda config --set always_yes yes --set changeps1 no
 RUN conda update -q conda
 
 # Useful for debugging any issues with conda
