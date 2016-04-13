@@ -2,7 +2,7 @@ FROM andrewosh/binder-base
 
 USER root
 
-RUN wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+RUN wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 # make sure the package repository is up to date
 RUN apt-get update
@@ -25,14 +25,15 @@ RUN conda info -a
 # Create a virtual env and install dependencies
 RUN conda install nose numpy pillow scipy pandas networkx scikit-image sqlalchemy numexpr dill cython
 
-# RUN conda env create -y -q -n autocnet -f $HOME/autocnet/environment.yml
+RUN wget https://raw.githubusercontent.com/Kelvinrr/test_notebook/master/environment.yml
+RUN conda env create -y -q -n autocnet -f environment.yml
+RUN rm environment.yml
 
 # Activate the env
-# RUN source activate autocnet
+RUN source activate autocnet
 
 # Install the non-conda packages if required, requirements.txt duplicates are ignored
-# RUN conda install -c https://conda.anaconda.org/jlaura opencv3=3.0.0
-RUN conda install opencv 
+RUN conda install -c https://conda.anaconda.org/jlaura opencv3=3.0.0
 RUN conda install -c https://conda.anaconda.org/jlaura h5py gdal
 RUN conda install -c osgeo proj4
 RUN conda upgrade numpy
