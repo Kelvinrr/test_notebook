@@ -38,5 +38,4 @@ RUN conda install -c osgeo proj4
 RUN conda upgrade numpy
 
 RUN pip install -r $HOME/autocnet/requirements.txt
-RUN conda install 
 
