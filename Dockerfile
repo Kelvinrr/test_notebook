@@ -2,12 +2,12 @@ FROM andrewosh/binder-base
 
 USER root
 
-# RUN wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
-# RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+RUN wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 # make sure the package repository is up to date
-# RUN apt-get update
+RUN apt-get update
 # install python3 and pip for python3
-# RUN apt-get install -y python3-pip  
+RUN apt-get install -y python3-pip  
 
 # RUN git clone https://github.com/Kelvinrr/autocnet.git $HOME/autocnet
 
