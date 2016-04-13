@@ -2,7 +2,7 @@ FROM andrewosh/binder-base
 
 USER root
 
-RUN wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+RUN wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 # make sure the package repository is up to date
 RUN apt-get update
